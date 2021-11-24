@@ -21,24 +21,36 @@
     @apply overflow-y-hidden md:overflow-y-auto;
 }
 
+.modal-not-active {
+    animation: modal-out-animation 0.5s;
+    animation-fill-mode: forwards;
+}
 
-@keyframes navbar-active {
+.modal-active {
+    animation: modal-in-animation 0.5s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes modal-in-animation {
     0% {
-        @apply left-10 top-0;
+        top: 140%;
     }
     100% {
-        @apply left-72 rotate-6 top-10 ;
-        box-shadow: -30px 30px 5px rgba(255,255,255, 0.3);
+        @apply top-16
 
     }
 }
 
-@keyframes navbar-deactive {
+@keyframes modal-out-animation {
     0% {
-        @apply left-72 rotate-6 top-10 rounded-[30px];
-        box-shadow: -30px 30px 5px rgba(255,255,255, 0.3);
+        @apply top-16
     }
     100% {
-        @apply left-0 top-0 rounded-[0px];
+        top: 140%;
     }
+}
+
+.modal-shadow {
+    box-shadow: -15px -15px 30px rgba(0,0,0, 0.5);
 }

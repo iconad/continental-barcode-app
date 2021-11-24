@@ -8,90 +8,1015 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <title>Animated Menu</title>
 </head>
-<body class="bg-yellow-100 overflow-x-hidden lg:overflow-x-auto lg:overflow-hidden flex items-center justify-center lg:h-screen">
-  <!-- remove flex classes from body tag to remove the horizontal and vertical position -->
+<body id="bodyTag" class="bg-theme-gray relative">
 
-  <div class="login-container container w-full lg:w-4/5 lg:bg-white h-screen lg:h-screen-75 lg:border border-gray-300 rounded-lg flex flex-wrap lg:flex-nowrap flex-col lg:flex-row justify-between group">
-
-    <!-- product Side -->
-    <div class="w-full lg:w-1/2 h-28 lg:h-full mt-32 lg:mt-0 lg:bg-theme-yellow-dark flex relative order-2 lg:order-1">
-
-      <div class="text-center hidden lg:flex items-center justify-start h-full w-full select-none">
-
-        <span class="transform block whitespace-nowrap h-full -rotate-90 text-[55px] 2xl:text-[90px] font-black uppercase text-yellow-300 opacity-0 transition-all group-hover:opacity-100 ml-10 2xl:ml-20 group-hover:-ml-20 2xl:group-hover:ml-32 lg:group-hover:ml-20 duration-1000 lg:duration-700 ease-in-out">Learn With Aamir</span>
-
+  <div class="site-warp ">
+    <div class="h-screen-70 relative">
+        <img src="./images/logo.jpg" alt="logo" class="w-32 absolute left-5 top-5">
+        <img src="./images/bg-road-top-3.png" alt="s" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent bg-opacity-20 flex items-end">
+        <div class="leading-lose info p-5 text-white font-semibold text-2xl capitalize">
+          <h1>Continental - 150 Years</h1>
+          <p class="text-lg">05 - 08 Dec, Dubai UAE</p>
+        </div>
       </div>
-      <!-- product text -->
+    </div>
 
-      <div class="product absolute right-0 bottom-0 flex items-center lg:justify-center w-full opacity-50 lg:opacity-100">
 
-        <img src="./images/1.png" alt="product" class="-mb-5 lg:mb-0 -ml-12 lg:ml-0 product h-[500px] xl:h-[700px] 2xl:h-[1000px] w-auto object-cover transform group-hover:translate-x-32 2xl:group-hover:translate-x-64 transition-all duration-1000 lg:duration-700 ease-in-out">
-        <!-- product image -->
 
-        <div class="shadow w-full h-5 bg-black bg-opacity-25 filter blur absolute bottom-0 lg:bottom-14 left-0 lg:left-24 rounded-full transform skew-x-10"></div>
-        <!-- product shadow -->
+
+    <div class="grid grid-cols-2">
+      <div id="aboutButton" class="h-32 bg-theme-yellow flex items-center justify-center border-4 border-theme-gray border-t-0 border-l-0 border-r-0 col-span-2">
+        <div class="text-center">
+          <div class="uppercase text-2xl font-medium tracking-widest">About Event</div>
+        </div>
+      </div>
+      <div class="col-span-2">
+        <div class="header p-3">
+          <div class="font-semibold tracking-widest text-xl">AGENDA: CONTIVENTION 2021</div>
+        </div>
+      </div>
+      <div id="day1Button" class="cursor-pointer h-32 bg-theme-yellow flex items-center justify-center border-2 border-theme-gray border-t-0 border-l-0">
+        <div class="text-center">
+          <div class="uppercase text-xl font-medium tracking-widest">Day 1</div>
+          <div class="uppercase text-base font-medium tracking-widest">(Sun, 5th Dec )</div>
+        </div>
+      </div>
+      <div id="day2Button" class="cursor-pointer h-32 bg-theme-yellow flex items-center justify-center border-2 border-theme-gray border-t-0 border-r-0">
+        <div class="text-center">
+          <div class="uppercase text-xl font-medium tracking-widest">Day 2</div>
+          <div class="uppercase text-base font-medium tracking-widest">(Mon, 6th Dec )</div>
+        </div>
+      </div>
+      <div id="day3Button"  class="cursor-pointer h-32 bg-theme-yellow flex items-center justify-center border-2 border-theme-gray border-b-0 border-l-0">
+        <div class="text-center">
+          <div class="uppercase text-xl font-medium tracking-widest">Day 3</div>
+          <div class="uppercase text-base font-medium tracking-widest">(The, 7th Dec )</div>
+        </div>
+      </div>
+      <div id="day4Button"  class="cursor-pointer h-32 bg-theme-yellow flex items-center justify-center border-2 border-theme-gray border-b-0 border-r-0">
+        <div class="text-center">
+          <div class="uppercase text-xl font-medium tracking-widest">Day 4</div>
+          <div class="uppercase text-base font-medium tracking-widest">(Wed, 8th Dec )</div>
+        </div>
+      </div>
+      <a href="mailto:info@continental.com" id="day5Button"  class="block cursor-pointer h-32 bg-theme-yellow flex items-center justify-center border-4 border-theme-gray border-b-0 border-l-0 border-r-0 col-span-2">
+        <div class="text-center">
+          <div class="uppercase text-xl font-medium tracking-widest">feedback</div>
+          <div class="text-base font-medium tracking-widest">(info@continental.com)</div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+
+  <div id="modalWrapper" class="bg-theme-gray bg-opacity-80 backdrop-filter backdrop-blur-lg w-full h-screen modal-not-active fixed left-0 z-10 rounded-2xl modal-shadow overflow-y-auto">
+
+    <div id="aboutModal" class="modals hidden">
+
+      <div class="flex items-end justify-between py-3 p-5">
+        <div class="title font-semibold text-xl">
+          About Event
+        </div>
+        <span class="close close-modal cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 fill-current text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </span>
+      </div>
+      <!-- modal header -->
+
+      <div class="modal-body p-5 pt-2 pb-24">
+        <div class="content space-y-5">
+          <p>On 08.10.1871 the "Continental-Caoutchouc- und Gutta-Percha Compagnie" was founded in Hanover,
+            Germany. From 250 employees in 1879 it grew thanks to internationalization and technological
+            leadership via 13.000 employees in 1914 to nowadays 236.000 employees in 561 locations in
+            58 countries worldwide. Continental is the 2nd biggest automotive supplier in the world.</p>
+
+            <p>We would like to thank our best customers for the successful cooperation in the last year and together
+            with Kislev Transportation LTD we invite you to celebrate Continental's 150th birthday together.</p>
+
+            <p>We will launch the Continental SportContact'" 7 which represents the latest technological leap.</p>
+
+            <p>The Continental Sport Contact" 7 is designed to be an ultra high performance on road tyre, which
+            can also be used at race tracks. You will have the chance to experience the outstanding German
+            Engineering in MotorCity on selected AUDI vehicles.</p>
+
+            <p>Continental will present to you the wide portfolio of tyres and explain the latest technology in truck,
+            motorcycle and bicycle tyres.</p>
+
+
+            <p>The future starts now. Continental is digitalizing the tyre management to continuously improve the
+            performance of our tyres and provide the lowest overall driving costs to you. Together with our
+            Israeli partner Traffilog we will present you the latest innovation of a digitalized fleet management.</p>
+
+            <p>We are looking forward to spend with you the day with Continental.</p>
+
+            </div>
       </div>
 
-      <div class="hidden lg:block w-1/3 bg-white ml-auto"></div>
 
     </div>
-    <!-- Product Side End-->
 
-    <!-- Login Form -->
-    <div class="w-full lg:w-1/2 order-1 lg:order-2">
-      <div class="form-wrapper flex items-center lg:h-full px-10 relative z-10 pt-16 lg:pt-0">
-        <div class="w-full space-y-5">
+    <div id="day1Modal" class="modals hidden">
 
-          <div class="form-caption flex items-end justify-center text-center space-x-3 mb-20">
-            <span class="text-3xl font-semibold text-gray-700">Login</span>
-            <span class="text-base text-gray-800">Form</span>
-          </div>
-          <!-- form caption -->
+      <div class="flex items-end justify-between py-3 p-5">
+        <div class="title font-semibold text-xl">
+          Day 1 <small>(Sun, 5th Dec)</small>
+        </div>
+        <span class="close close-modal cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 fill-current text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </span>
+      </div>
+      <!-- modal header -->
 
-          <div class="form-element">
-            <label class="space-y-2 w-full lg:w-4/5 block mx-auto">
-              <span class="block text-lg text-gray-800 tracking-wide">Email</span>
-              <span class="block">
-                <input type="text" class="bg-yellow-100 lg:bg-white border lg:border-2 border-gray-400 lg:border-gray-200 w-full p-3 focus:outline-none active:outline-none focus:border-gray-400 active:border-gray-400">
-              </span>
-            </label>
-          </div>
-          <!-- form element -->
+      <div class="modal-body p-5 pt-2 pb-24">
+        <div class="content space-y-5">
+
+          <div class="list border-l-2 border-theme-yellow mt-5">
 
 
-          <div class="form-element">
-            <label class="space-y-2 w-full lg:w-4/5 block mx-auto">
-              <span class="block text-lg text-gray-800 tracking-wide">Password</span>
-              <span class="block">
-                <input type="password" class="bg-yellow-100 lg:bg-white border lg:border-2 border-gray-400 lg:border-gray-200 w-full p-3 focus:outline-none active:outline-none focus:border-gray-400 active:border-gray-400">
-              </span>
-            </label>
-          </div>
-          <!-- form element -->
-
-          <div class="form-element">
-            <div class="w-full lg:w-4/5 block mx-auto flex items-center justify-between">
-              <label class="block text-gray-800 tracking-wide flex items-center space-x-2 select-none">
-                <input type="checkbox" name="" id="">
-                <span class="block text-gray-800 tracking-wide">Remember me</span>
-              </label>
-              <a href="#" class="block text-gray-800 tracking-wide inline-block border-b border-gray-300">Forgot Password?</a>
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">14:00 - 22:00</div>
+                <div class="event-name text-xl mt-2"> Registration </div>
+                <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Ritz Carlton reception</span>
+                </div>
+                <!-- event name -->
+              </div>
             </div>
-          </div>
-          <!-- form element -->
+            <!-- list-item -->
 
-          <div class="form-element">
-            <span class="w-full lg:w-4/5 block mx-auto ">
-              <input type="submit" class="cursor-pointer border-2 border-yellow-200 w-full p-3 bg-yellow-200 focus:outline-none active:outline-none focus:bg-theme-yellow active:bg-theme-yellow hover:bg-theme-yellow transition-all">
-            </span>
+            <div class="listitem relative h-28">
+
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">20:00 - 23:00</div>
+                <div class="event-name text-xl mt-2"> Dinner (Optional) </div>
+                <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Ritz Carlton</span>
+                </div>
+                <!-- event name -->
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+
+
+
+
+
           </div>
-          <!-- form element -->
+          <!-- list -->
 
         </div>
       </div>
-      <!-- form wrapper -->
+
+
     </div>
-    <!-- Login Form End-->
+
+    <div id="day2Modal" class="modals hidden">
+
+      <div class="flex items-end justify-between py-3 p-5">
+        <div class="title font-semibold text-xl">
+          Day 2 <small>(Mon, 6th Dec)</small>
+        </div>
+        <span class="close-modal cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 fill-current text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </span>
+      </div>
+      <!-- modal header -->
+
+      <div class="modal-body p-5 pt-2 pb-24">
+        <div class="content space-y-5">
+
+          <div class="list border-l-2 border-theme-yellow h-auto mt-5">
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">09:00-09:30</div>
+                <div class="event-name text-xl mt-2"> Welcome Coffee </div>
+
+                <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Ritz Carlton conference centre</span>
+                </div>
+                <!-- event location -->
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">9:30-09:45</div>
+                <div class="event-name text-xl mt-2"> Introduction  </div>
+
+                <div class="flex items-center space-x-3">
+                  <div class="event-speaker text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Mostafa Farouk</span>
+                  </div>
+                  <!-- event name -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">09:45-10:15</div>
+                <div class="event-name text-xl mt-2"> Continental Strategy </div>
+
+                <div class="flex items-center space-x-3">
+                  <div class="event-speaker text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Jon-Ander</span>
+                  </div>
+                  <!-- event name -->
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Ritz Carlton conference centre</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">10:15-10:45</div>
+                <div class="event-name text-xl mt-2"> CME Strategy </div>
+
+                <div class="flex items-center space-x-3">
+                  <div class="event-speaker text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Karel Kucera</span>
+                  </div>
+                  <!-- event name -->
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Ritz Carlton conference centre</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">10:45-11:05</div>
+                <div class="event-name text-xl mt-2"> Coffee Break </div>
+
+                <div class="flex items-center space-x-3">
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Conference centre</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">11:05-11:20</div>
+                <div class="event-name text-xl mt-2"> Retail activation </div>
+
+                <div class="flex items-center space-x-3">
+
+
+                  <div class="event-speaker text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Vaqar Ahmed</span>
+                  </div>
+                  <!-- event name -->
+
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Ritz Carlton conference centre</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">11:20 - 11:40</div>
+                <div class="event-name text-xl mt-2"> Market to Market- TPE </div>
+
+                <div class="flex items-center space-x-3">
+
+                  <div class="event-speaker text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Hisham Layali</span>
+                  </div>
+                  <!-- event name -->
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Ritz Carlton conference centre</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">11:40 - 12:00</div>
+                <div class="event-name text-xl mt-2"> Let`s talk Solution </div>
+
+                <div class="flex items-center space-x-3">
+
+                  <div class="event-speaker text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Conroy Colay</span>
+                  </div>
+                  <!-- event name -->
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Ritz Carlton conference centre</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">12:00 - 12:20</div>
+                <div class="event-name text-xl mt-2"> Market to Market - UAE </div>
+
+                <div class="flex items-center space-x-3">
+
+                  <div class="event-speaker text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Shaun Smith</span>
+                  </div>
+                  <!-- event name -->
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Ritz Carlton conference centre</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">12:30-14:00</div>
+                <div class="event-name text-xl mt-2"> Lunch </div>
+
+                <div class="flex items-center space-x-3">
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Ritz Carlton conference center</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">14:00</div>
+                <div class="event-name text-2xl mt-2 text-green-600"> Group photo outside </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">14:00-14:20</div>
+                <div class="event-name text-xl mt-2"> Social Media </div>
+
+                <div class="flex items-center space-x-3">
+
+                  <div class="event-speaker text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Wissam Abilmouna</span>
+                  </div>
+                  <!-- event name -->
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Ritz Carlton conference centre</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">14:20 - 14:35</div>
+                <div class="event-name text-xl mt-2"> Market to Market - Qatar </div>
+
+                <div class="flex items-center space-x-3">
+
+                  <div class="event-speaker text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Shambil Basit </span>
+                  </div>
+                  <!-- event name -->
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Ritz Carlton conference centre</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">14:35 - 14:55</div>
+                <div class="event-name text-xl mt-2"> Market to Market - Jordan </div>
+
+                <div class="flex items-center space-x-3">
+
+                  <div class="event-speaker text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Badie Diyah</span>
+                  </div>
+                  <!-- event name -->
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Ritz Carlton conference centre</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">14:55 - 15:30</div>
+                <div class="event-name text-xl mt-2"> Al Mailem 50 Years </div>
+
+                <div class="flex items-center space-x-3">
+
+                  <div class="event-speaker text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Choji lamba</span>
+                  </div>
+                  <!-- event name -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">15:30-15:55</div>
+                <div class="event-name text-xl mt-2"> Coffee break </div>
+
+                <div class="flex items-center space-x-3">
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Conference centre</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">16:00 - 18:00</div>
+                <div class="event-name text-xl mt-2"> Fit for life  </div>
+
+                <div class="flex items-center space-x-3">
+
+                  <div class="event-speaker text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Khalid Habib</span>
+                  </div>
+                  <!-- event name -->
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Ritz Carlton conference centre</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+
+            <div class="listitem relative h-28">
+              <!-- <div class="endcolor absolute top-0 -left-2 w-4 h-full rounded-full bg-theme-gray bg-opacity-30 backdrop-filter backdrop-blur"></div> -->
+              <div class="absolute top-[100%] -left-px w-full h-[2px] bg-theme-yellow "></div>
+              <div class="absolute bottom-0 right-0 w-[2px] h-24 bg-theme-yellow "></div>
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">19:30</div>
+                <div class="event-name text-xl mt-2"> Dinner  </div>
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Ritz Carlton conference centre</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+          </div>
+          <!-- list -->
+
+        </div>
+    </div>
+
+    <div id="day3Modal" class="modals hidden">
+
+      <div class="flex items-end justify-between py-3 p-5">
+        <div class="title font-semibold text-xl">
+          Day 3 <small>(Mon, 7th Dec)</small>
+        </div>
+        <span class="close-modal cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 fill-current text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </span>
+      </div>
+      <!-- modal header -->
+
+      <div class="modal-body p-5 pt-2 pb-24">
+        <div class="content space-y-5">
+
+          <div class="list border-l-2 border-theme-yellow mt-5">
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">8:00: 09:00</div>
+                <div class="event-name text-xl mt-2"> Breakfast </div>
+
+                <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Caravan restaurant</span>
+                </div>
+                <!-- event location -->
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">09:30 - 10:00</div>
+                <div class="event-name text-xl mt-2"> Welcome coffee  </div>
+
+                <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Ritz Carlton Conference centre</span>
+                </div>
+                <!-- event location -->
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">10:00 - 10:15</div>
+                <div class="event-name text-xl mt-2"> Introduction </div>
+
+                <div class="flex items-center space-x-3">
+
+                  <div class="event-speaker text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Mostafa Farouk</span>
+                  </div>
+                  <!-- event name -->
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Continental ballroom</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+            <div class="listitem relative h-64">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">10:00 - 12:00</div>
+
+                  <div class="event-name text-xl mt-2">
+                    <span class="block">Sport Contact 7 - Launch</span>
+                    <span class="block">Media Arrival</span>
+                    <span class="block">Product Presentation</span>
+                    <span class="block">Tyre Display</span>
+                    <span class="block">Interviews</span>
+                  </div>
+
+                  <div class="flex items-center space-x-3">
+
+                    <div class="event-speaker text-xs mt-2 flex items-start space-x-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                      </svg>
+                      <span>Joby Joseph - Karem Arab - GT</span>
+                    </div>
+                    <!-- event name -->
+
+                  </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">12:30-14:00</div>
+                <div class="event-name text-2xl mt-2"> Lunch </div>
+
+                <div class="flex items-center space-x-3">
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Caravane Ritz Carlton</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">14:00</div>
+                <div class="event-name text-xl mt-2"> CME Award </div>
+
+                <div class="flex items-center space-x-3">
+
+                  <div class="event-speaker text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    <span> Claudia Nijboer</span>
+                  </div>
+                  <!-- event name -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">14:20</div>
+                <div class="event-name text-xl mt-2"> Team Building </div>
+
+                <div class="flex items-center space-x-3">
+
+                  <div class="event-speaker text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    <span> All</span>
+                  </div>
+                  <!-- event name -->
+
+                </div>
+
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">16:30</div>
+                <div class="event-name text-xl mt-2"> Coffe Break </div>
+
+                <div class="flex items-center space-x-3">
+
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Ritz Carlton Conference center</span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+            <div class="listitem relative h-28">
+              <!-- <div class="endcolor absolute top-0 -left-2 w-4 h-full rounded-full bg-theme-gray bg-opacity-30 backdrop-filter backdrop-blur"></div> -->
+              <div class="absolute top-[100%] -left-px w-full h-[2px] bg-theme-yellow "></div>
+              <div class="absolute bottom-0 right-0 w-[2px] h-24 bg-theme-yellow "></div>
+              <div class="dot absolute -top-px -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="font-medium text-sm mt-1 ">19:30</div>
+                <div class="event-name text-xl mt-2"> Gala Diner </div>
+
+                <div class="flex items-center space-x-3">
+
+                  <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Ritz Carlton </span>
+                  </div>
+                  <!-- event location -->
+
+                </div>
+
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+          </div>
+          <!-- list -->
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    </div>
+
+    <div id="day4Modal" class="modals hidden">
+
+      <div class="flex items-end justify-between py-3 p-5">
+        <div class="title font-semibold text-xl">
+          Day 4 <small>(Sun, 8th Dec)</small>
+        </div>
+        <span class="close close-modal cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 fill-current text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </span>
+      </div>
+      <!-- modal header -->
+
+      <div class="modal-body p-5 pt-2 pb-24">
+        <div class="content space-y-5">
+
+          <div class="list mt-5">
+
+
+            <div class="listitem relative h-28">
+              <div class="dot absolute top-1 -left-2 w-4 h-4 rounded-full bg-theme-yellow"></div>
+              <!-- dot end -->
+              <div class="item-info absolute -top-2 left-5">
+                <div class="event-name text-xl mt-2"> Departure </div>
+                <div class="event-location text-xs mt-2 flex items-start space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Ritz Carlton reception</span>
+                </div>
+                <!-- event name -->
+              </div>
+            </div>
+            <!-- list-item -->
+
+
+
+
+
+
+
+          </div>
+          <!-- list -->
+
+        </div>
+      </div>
+
+
+    </div>
+
+
 
 
   </div>

@@ -7,9 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "theme-yellow": '#ffc727',
+        "theme-yellow": '#f7a600',
+        "theme-gold": '#c8994a',
         "theme-yellow-dark": '#e6b323',
         "theme-dark": '#37474f',
+        "theme-gray": '#e5e3e0',
       },
       height: {
         'screen-75': '90vh',

@@ -12,7 +12,7 @@
   "devDependencies": {
     "autoprefixer": "^10.3.1",
     "postcss": "^8.3.6",
-    "tailwindcss": "^2.2.14"
+    "tailwindcss": "^2.2.16"
   },
   "dependencies": {
     "postcss-cli": "^8.3.1",

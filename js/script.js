@@ -1,37 +1,91 @@
-// //Movement Animation to happen
-// const card = document.querySelector(".card");
-// const container = document.querySelector(".container");
-// //Items
-// const title = document.querySelector(".title");
-// const sneaker = document.querySelector(".product");
-// const purchase = document.querySelector(".purchase");
-// const description = document.querySelector(".info h3");
-// const sizes = document.querySelector(".sizes");
+const bodyTag = document.querySelector("#bodyTag");
+const modalWrapper = document.querySelector("#modalWrapper");
+const aboutModal = document.querySelector("#aboutModal");
+const day1Modal = document.querySelector("#day1Modal");
+const day2Modal = document.querySelector("#day2Modal");
+const modals = document.querySelectorAll(".modals");
+const closeModal = document.querySelectorAll(".close-modal");
+let isModal = false
 
-// //Moving Animation Event
-// container.addEventListener("mousemove", (e) => {
-//   let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-//   let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-//   card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-// });
-// //Animate In
-// container.addEventListener("mouseenter", (e) => {
-//   card.style.transition = "none";
-//   //Popout
-//   title.style.transform = "translateZ(150px)";
-//   sneaker.style.transform = "translateZ(200px) rotateZ(-45deg)";
-//   description.style.transform = "translateZ(125px)";
-//   sizes.style.transform = "translateZ(100px)";
-//   purchase.style.transform = "translateZ(75px)";
-// });
-// //Animate Out
-// container.addEventListener("mouseleave", (e) => {
-//   card.style.transition = "all 0.5s ease";
-//   card.style.transform = `rotateY(0deg) rotateX(0deg)`;
-//   //Popback
-//   title.style.transform = "translateZ(0px)";
-//   sneaker.style.transform = "translateZ(0px) rotateZ(0deg)";
-//   description.style.transform = "translateZ(0px)";
-//   sizes.style.transform = "translateZ(0px)";
-//   purchase.style.transform = "translateZ(0px)";
-// });
+const aboutButton = document.querySelector("#aboutButton");
+const day1Button = document.querySelector("#day1Button");
+const day2Button = document.querySelector("#day2Button");
+
+
+closeModal.forEach((item, index) => {
+    closeModal[index].addEventListener("click", () => {
+        closeAllModals()
+    });
+});
+
+
+
+aboutButton.addEventListener("click", () => {
+    openModal()
+    closeDayModals()
+    aboutModal.classList.remove('hidden')
+});
+
+
+day1Button.addEventListener("click", () => {
+    openModal()
+    openDayModal(1)
+});
+
+day2Button.addEventListener("click", () => {
+    openModal()
+    openDayModal(2)
+});
+
+day3Button.addEventListener("click", () => {
+    openModal()
+    openDayModal(3)
+});
+
+day4Button.addEventListener("click", () => {
+    openModal()
+    openDayModal(4)
+});
+
+function openDayModal (num) {
+    modals.forEach((item, index) => {
+        modals[index].classList.add('hidden')
+    });
+    let numModal = document.querySelector(`#day${num}Modal`)
+    numModal.classList.remove('hidden')
+}
+
+function closeDayModals () {
+    modals.forEach((item, index) => {
+        modals[index].classList.add('hidden')
+    });
+}
+
+function closeAllModals() {
+    bodyTag.classList.remove(`overflow-y-hidden`)
+    modalWrapper.classList.remove(`modal-active`)
+    modalWrapper.classList.add(`modal-not-active`)
+    isModal = false
+}
+
+function openModal() {
+    bodyTag.classList.add(`overflow-y-hidden`)
+    modalWrapper.classList.remove(`modal-not-active`)
+    modalWrapper.classList.add(`modal-active`)
+    isModal = true
+}
+
+
+if(isModal) {
+document.addEventListener('click', function(event) {
+        var isClickInside = modalWrapper.contains(event.target);
+
+        if (!isClickInside) {
+            alert('here')
+            bodyTag.classList.remove(`overflow-y-hidden`)
+            modalWrapper.classList.remove(`modal-active`)
+            modalWrapper.classList.add(`modal-not-active`)
+        }
+  });
+}
+
