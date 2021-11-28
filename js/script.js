@@ -106,6 +106,8 @@ let i;
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
 
+    modalWrapper.scroll({top: 0, left: 0, behavior: 'smooth'});
+
     accs.forEach(element => {
         element.classList.remove('active')
     });
