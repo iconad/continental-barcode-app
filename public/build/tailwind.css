@@ -1123,7 +1123,6 @@ video {
 .accordion {
     cursor: pointer;
     width: 100%;
-    border: none;
     text-align: left;
     outline: none;
     transition: 0.3s;
