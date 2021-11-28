@@ -820,17 +820,13 @@ video {
 	--tw-border-opacity: 1;
 	border-color: rgba(17, 24, 39, var(--tw-border-opacity));
 }
-.border-gray-200 {
+.border-theme-yellow {
 	--tw-border-opacity: 1;
-	border-color: rgba(229, 231, 235, var(--tw-border-opacity));
+	border-color: rgba(247, 166, 0, var(--tw-border-opacity));
 }
 .border-gray-300 {
 	--tw-border-opacity: 1;
 	border-color: rgba(209, 213, 219, var(--tw-border-opacity));
-}
-.border-theme-yellow {
-	--tw-border-opacity: 1;
-	border-color: rgba(247, 166, 0, var(--tw-border-opacity));
 }
 .border-gray-400 {
 	--tw-border-opacity: 1;
