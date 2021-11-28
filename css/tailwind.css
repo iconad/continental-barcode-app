@@ -54,3 +54,23 @@
 .modal-shadow {
     box-shadow: -15px -15px 30px rgba(0,0,0, 0.5);
 }
+
+
+
+.accordion {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.3s;
+  }
+
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+
+  .panel {
+    display: none;
+    overflow: hidden;
+  }

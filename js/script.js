@@ -10,6 +10,7 @@ let isModal = false
 const aboutButton = document.querySelector("#aboutButton");
 const day1Button = document.querySelector("#day1Button");
 const day2Button = document.querySelector("#day2Button");
+const day7Button = document.querySelector("#day7Button");
 
 
 closeModal.forEach((item, index) => {
@@ -45,6 +46,11 @@ day3Button.addEventListener("click", () => {
 day4Button.addEventListener("click", () => {
     openModal()
     openDayModal(4)
+});
+
+day7Button.addEventListener("click", () => {
+    openModal()
+    openDayModal(7)
 });
 
 function openDayModal (num) {
@@ -89,3 +95,41 @@ document.addEventListener('click', function(event) {
   });
 }
 
+
+// ======= Accordion =======
+
+
+let acc = document.getElementsByClassName("accordion");
+let accs = document.querySelectorAll(".accordion");
+let i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+
+    accs.forEach(element => {
+        element.classList.remove('active')
+    });
+
+    if(this.classList.contains('active')) {
+        this.classList.add("active");
+    }else{
+        this.classList.remove("active");
+    }
+
+    let panel = this.nextElementSibling;
+    let panels = document.querySelectorAll(".panel");
+
+    if (panel.style.display === "block") {
+
+        panel.style.display = "none";
+
+    } else {
+
+        panels.forEach(element => {
+            element.style.display = "none";
+        });
+
+        panel.style.display = "block";
+    }
+  });
+}
