@@ -208,9 +208,6 @@ function searchMember () {
 
     let inputValue = document.querySelector("#searchSeat").value;
 
-    // if(inputValue){
-
-
         let search = inputValue.toLowerCase();
         let result = data.map(k => {
             let members = k.members.join(' ').toLowerCase();
@@ -226,7 +223,7 @@ function searchMember () {
 
             table.innerHTML += `
 
-            <div class="listitem mb-10">
+            <div class="listitem" style="margin-top: 25px;">
                 <table class="table w-full">
                 <caption class="p-2 font-semibold">Table ${result[index].table}</caption>
                     ${result[index].members.map((m)=> "<tr> <td class='border border-gray-400 p-2 rounded'> " + m + " </td> </tr>" ).join("\n")}
@@ -236,7 +233,11 @@ function searchMember () {
             `;
 
         }
-    // }
+
+        if(!inputValue){
+            result = data
+        }
+
 
 }
 
