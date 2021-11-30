@@ -972,7 +972,10 @@
               <!-- dot end -->
               <div class="item-info absolute -top-2 left-5">
                 <div class="font-medium text-sm mt-1 ">19:30</div>
-                <div class="event-name text-xl mt-2"> Gala Dinner </div>
+                <div class="event-name text-xl mt-2 flex items-center space-x-2">
+                  <span class="block">Gala Dinner </span>
+                  <span class="block border px-1 py-1 rounded border-yellow-500 font-medium tracking-wide text-xs bg-yellow-500" id="checkTableSeating">Check Table Seating </span>
+                </div>
 
                 <div class="flex items-center space-x-3">
 
@@ -1056,7 +1059,7 @@
 
     </div>
 
-    <div id="day7Modal" class="modals">
+    <div id="day7Modal" class="modals hidden">
 
       <div class="flex items-end justify-between py-3 p-5">
         <div class="title font-semibold text-xl">
@@ -1267,11 +1270,40 @@
 
     </div>
 
+    <div id="day8Modal" class="modals hidden">
+
+      <div class="flex items-end justify-between py-3 p-5">
+        <div class="title font-semibold text-xl">
+          Gala Dinner Table Seating
+        </div>
+        <span class="close close-modal cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 fill-current text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </span>
+      </div>
+      <!-- modal header -->
+
+      <div class="mt-5 pt-0 p-5">
+        <input onkeyup="searchMember()" type="search" id="searchSeat" class="focus:outline-none active:outline-none w-full p-2 bg-transparent rounded border border-gray-400 text-sm" placeholder="Search your seat">
+      </div>
+
+      <div class="modal-body pt-0 p-5 pt-2 pb-24">
+        <div class="content space-y-5">
+
+          <div id="tablelist" class="list"></div>
+          <!-- list -->
+
+        </div>
+      </div>
+
+
+    </div>
+
 
 
 
   </div>
-
   <script src="./js/script.js"></script>
 </body>
 </html>

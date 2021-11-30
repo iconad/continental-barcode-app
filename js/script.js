@@ -53,6 +53,13 @@ day7Button.addEventListener("click", () => {
     openDayModal(7)
 });
 
+checkTableSeating.addEventListener("click", () => {
+    closeDayModals()
+    openModal()
+    openDayModal(8)
+    modalWrapper.scroll({top: 0, left: 0, behavior: 'smooth'});
+});
+
 function openDayModal (num) {
     modals.forEach((item, index) => {
         modals[index].classList.add('hidden')
@@ -135,3 +142,111 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+
+// ========== Table Seating ===========
+
+
+let table = document.getElementById('tablelist');
+
+const data = [
+    {
+        table: 1,
+        members: ['Jon-Ander', 'Karel Kucera', 'Hisham layali', 'Youssef layali', 'Toufic Ghanem', 'Rodrigo De Los Santos', 'Shaun Matthew Smith']
+    },
+    {
+        table: 2,
+        members: ["Juan Uruburu", "Ma'n Marwan Alhamawi", "Shambil Basit", "Choji Lamba", "Sunil Nanda", "Rony Richard ", "Cyril Zacharia", "Lyes Issaadi"]
+    },
+    {
+        table: 3,
+        members: ["Bulent Erdogan", "Jamil Farook", "Niroshana Weeraratne", "K P Murali", "Rajesh Sharma", "Srikanth Madakkavil", "Anuradha Muthukumar", "Mohamed Mostafa"]
+    },
+    {
+        table: 4,
+        members: ["Mostafa Farouk", "Mahmoud Alabada", "Wasim Zeyadeh", "Mohammad Abdelfatah", "Liane Mendonca", "Khalid Abdulla", "Pradeep Karat", "Mohamed Bayoudh"]
+    },
+    {
+        table: 5,
+        members: ["Moataz Hassan", "Bassem bawab", "Rafic Bawab", "Ali Yusuf Alkuwaiti", "Naser Mohamed", "Bahaa Yaghi", "Andy Jandug", "Joby Joseph"]
+    },
+    {
+        table: 6,
+        members: ["Claudia Nijboer", "Ghouth Hala", "Hesham Ahmed", "Satpathy Sabyasachi", "Maya Coulibaly", "Bahaa Alkhatib", "Rony Dominic", "Mohamed Bayoudh"]
+    },
+    {
+        table: 7,
+        members: ["Ahmad Hudaib", "Ulrike Hintze", "Ashraf Morcos", "Milad Shehata", "Abdelrahman Elshami", "Osama Al Deen", "Noaman Sayed", "Ulorica Reveredo"]
+    },
+    {
+        table: 8,
+        members: ["Umberto Quaglia", "Hassan Mazhar", "Anton Abuzeid", "Wuisam Abil Mouna", "Raad Almobark", "Rohit Menon", "Madhu Madhavan", "Marianne Caoile"]
+    },
+    {
+        table: 9,
+        members: ["Dustine Gascoyne", "Haytham Khalaf", "Ahmad Alsarahna", "Thomas Strohmeier", "Mary Ann Formantes", "Arjun Sunil", "Laurice Ellen", "Joby Joseph"]
+    },
+    {
+        table: 10,
+        members: ["Omar Ahmed", "Badie El Dayeh", "Sami  Alsallakh", "Rima Eldick", "Conroy Colaco", "Viniljith Ajith", "Mohamed Kalas", "Mohamed Ghanem"]
+    },
+    {
+        table: 11,
+        members: ["Maricris Alvero", "Danko Sumonja", "Jan Egil Hjelle", "Jitty John", "Mohammed Hosny", "Pearl Salomie", "Grace Librason"]
+    },
+    {
+        table: 12,
+        members: ["Vaqar Ahmad", "Muhammad Ashraf", "Muhammad Bashir", "Makhlouf Mohamed", "Osama Makhlouf", "Vinoth Govindaraj", "Sajitha Rajesh", "Jafri Razi"]
+    },
+]
+
+
+
+searchMember();
+
+function searchMember () {
+
+    let inputValue = document.querySelector("#searchSeat").value;
+
+    // if(inputValue){
+
+
+        let search = inputValue.toLowerCase();
+        let result = data.map(k => {
+            let members = k.members.join(' ').toLowerCase();
+            if (members.includes(search)){
+                return k;
+            }
+        }).filter(e => e !== undefined);
+
+        table.innerHTML = "";
+
+        for (let index = 0; index < result.length; index++) {
+            const element = result[index];
+
+            table.innerHTML += `
+
+            <div class="listitem mb-10">
+                <table class="table w-full">
+                <caption class="p-2 font-semibold">Table ${result[index].table}</caption>
+                    ${result[index].members.map((m)=> "<tr> <td class='border border-gray-400 p-2 rounded'> " + m + " </td> </tr>" ).join("\n")}
+                </table>
+            </div>
+
+            `;
+
+        }
+    // }
+
+}
+
+// for (let ind = 0; ind < result[index].members.length; ind++) {
+// }
+
+
+
+
+
+
+
+
