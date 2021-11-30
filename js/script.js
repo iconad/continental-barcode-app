@@ -164,7 +164,7 @@ const data = [
     },
     {
         table: 4,
-        members: ["Mostafa Farouk", "Mahmoud Alabada", "Wasim Zeyadeh", "Mohammad Abdelfatah", "Liane Mendonca", "Khalid Abdulla", "Pradeep Karat", "Mohamed Bayoudh"]
+        members: ["Mostafa Farouk", "Mahmoud Alabada", "Wasim Zeyadeh", "Mohammad Abdelfatah", "Liane Mendonca", "Khalid Abdulla", "Pradeep Karat", "Jafri Razi"]
     },
     {
         table: 5,
@@ -184,7 +184,7 @@ const data = [
     },
     {
         table: 9,
-        members: ["Dustine Gascoyne", "Haytham Khalaf", "Ahmad Alsarahna", "Thomas Strohmeier", "Mary Ann Formantes", "Arjun Sunil", "Laurice Ellen", "Joby Joseph"]
+        members: ["Dustine Gascoyne", "Haytham Khalaf", "Ahmad Alsarahna", "Thomas Strohmeier", "Mary Ann Formantes", "Arjun Sunil", "Laurice Ellen", "Asmaa Ourti"]
     },
     {
         table: 10,
@@ -196,7 +196,7 @@ const data = [
     },
     {
         table: 12,
-        members: ["Vaqar Ahmad", "Muhammad Ashraf", "Muhammad Bashir", "Makhlouf Mohamed", "Osama Makhlouf", "Vinoth Govindaraj", "Sajitha Rajesh", "Jafri Razi"]
+        members: ["Vaqar Ahmad", "Muhammad Ashraf", "Muhammad Bashir", "Makhlouf Mohamed", "Osama Makhlouf", "Vinoth Govindaraj", "Sajitha Rajesh"]
     },
 ]
 
@@ -225,8 +225,8 @@ function searchMember () {
 
             <div class="listitem" style="margin-top: 25px;">
                 <table class="table w-full">
-                <caption class="p-2 font-semibold">Table ${result[index].table}</caption>
-                    ${result[index].members.map((m)=> "<tr> <td class='border border-gray-400 p-2 rounded'> " + m + " </td> </tr>" ).join("\n")}
+                <caption class="p-2 font-semibold" style="border: 1px solid rgba(247, 166, 0, var(--tw-bg-opacity)); background: rgba(247, 166, 0, var(--tw-bg-opacity)); border-radius: 6px 6px 0px 0px;">Table ${result[index].table}</caption>
+                    ${result[index].members.map((m)=> "<tr> <td class='border-t-0 border border-gray-400 p-2 rounded'> " + m + " </td> </tr>" ).join("\n")}
                 </table>
             </div>
 
